@@ -1,0 +1,71 @@
+Include config.d/*
+
+# DevPod Start mandark-go.devpod
+Host mandark-go.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode mandark-go --workdir "/workspace"
+  User vscode
+# DevPod End mandark-go.devpod
+# DevPod Start wifi.devpod
+Host wifi.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode wifi --workdir "/workspace"
+  User vscode
+# DevPod End wifi.devpod
+# DevPod Start wifi-server.devpod
+Host wifi-server.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode wifi-server --workdir "/workspace"
+  User vscode
+# DevPod End wifi-server.devpod
+# DevPod Start zomboid.devpod
+Host zomboid.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode zomboid --workdir "/workspace"
+  User vscode
+# DevPod End zomboid.devpod
+# DevPod Start recovery.devpod
+Host recovery.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode recovery --workdir "/workspace"
+  User vscode
+# DevPod End recovery.devpod
+# DevPod Start data-ui.devpod
+Host data-ui.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode data-ui --workdir "/workspace"
+  User vscode
+# DevPod End data-ui.devpod
+
+Host racknerd
+  HostName 192.46.233.23
+  User justin
+  IdentityFile ~/.ssh/id_racknerd_me
+
+Host bitbucket.org
+  IdentityFile ~/.ssh/work-keys/bitbucket.pub
+

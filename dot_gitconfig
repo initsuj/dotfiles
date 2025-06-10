@@ -1,0 +1,47 @@
+# see https://stackoverflow.com/a/58550268
+
+[user]
+	name = initsuj
+	email = initsuj@outlook.com
+	signingKey = 
+
+[includeIf "hasconfig:remote.*.url:git@github.com/**"]
+	path = ~/.config/git/gitconfig.github
+
+[includeIf "hasconfig:remote.*.url:https://bitbucket.org/atlasied/**"]
+	path = ~/.config/git/gitconfig.work
+
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:atlasied/**"]
+	path = ~/.config/git/gitconfig.work
+  
+[includeIf "gitdir:~/Code/Work/"]
+	path = ~/.config/git/gitconfig.work
+
+[includeIf "gitdir:~/Code/Personal/"]
+	path = ~/Code/Personal/.gitconfig
+
+[safe]
+	directory = ~/Code/
+
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	format = openpgp
+	program = gpg
+
+[commit]
+	gpgSign = false
+
+[tag]
+	forceSignAnnotated = false
+	
+[gpg "ssh"]
+	program = 
+	allowedSignersFile = 

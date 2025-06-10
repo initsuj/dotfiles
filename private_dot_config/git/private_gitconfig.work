@@ -1,0 +1,5 @@
+[user]
+    name = Justin Slauson
+    email = justin.slauson@atlasied.com
+[core]
+    sshCommand = ssh -i ~/.ssh/keys/atlasied-bitbucket.pub -o IdentitiesOnly=yes -F /dev/null
